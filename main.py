@@ -56,7 +56,7 @@ async def on_message(msg):
         if guessing == GUESSBASE:
             GUESSBASE = random.randint(1, 1000)
             await msg.add_reaction('🛐')
-            await msg.channel.send(f'{msg.author.mention}你猜到了!\n答案是{data}')
+            await msg.channel.send(f'{msg.author.mention}你猜到了!\n答案是{guessing}')
             return await msg.channel.send('==============================')
         # the guessing is lower than answer
         elif guessing < GUESSBASE:
