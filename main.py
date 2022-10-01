@@ -34,6 +34,10 @@ async def on_application_command_error(ctx, error):
 
 @bot.event
 async def on_message(msg):
+    # determine if the message sender is a bot
+    if msg.author.bot:
+        # if yes, return the event to prevent loop
+        return
     # determine if a user is sending messages in the PM
     if msg.channel.type is discord.ChannelType.private:
         # if yes, return the event
